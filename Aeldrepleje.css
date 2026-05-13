@@ -64,8 +64,9 @@
     margin-bottom: 0.6em;
 }
 
+
 .hp-phone {
-    font-size: 1.1em;
+    font-size: 1.05em !important;
     font-weight: 600;
 }
 
