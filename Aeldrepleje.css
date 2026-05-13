@@ -1,18 +1,18 @@
 /* ============================= */
-/* Popup container               */
+/* Popup container (kort)        */
 /* ============================= */
 
 .hp-popup {
     font-family: "Segoe UI", Arial, sans-serif;
     font-size: 0.95rem;
 
-    background: #6f6278;          /* Nyborg-ish lilla */
-    color: #ffffff;
+    background: #f0f0ee;   /* lys kommunal grå */
+    color: #2b2b2b;
 
-    border-radius: 8px;
-    padding: 12px 14px;
+    border-radius: 12px;
+    padding: 14px 16px;
 
-    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 
@@ -21,39 +21,20 @@
 /* ============================= */
 
 .hp-popup p {
-    margin-bottom: 0.5em;
-    line-height: 1.4;
+    margin-bottom: 0.6em;
+    line-height: 1.5;
 }
 
-/* Overskrift */
 .hp-highlight {
-    font-size: 1.05em;
+    font-size: 1.15em;
     font-weight: 600;
     margin-bottom: 0.4em;
 }
 
-/* Introtekst */
 .hp-intro {
-    font-size: 0.95em;
-    opacity: 0.9;
-}
-
-
-/* ============================= */
-/* Linjer med ikon               */
-/* ============================= */
-
-.hp-line {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 0.25em;
-}
-
-.hp-icon {
-    flex: 0 0 18px;
-    font-size: 1em;
-    opacity: 0.9;
+    font-weight: 500;
+    margin-top: 0.4em;
+    margin-bottom: 0.3em;
 }
 
 
@@ -62,12 +43,12 @@
 /* ============================= */
 
 .hp-popup a {
-    color: #ffffff;
+    color: #2b2b2b;
     text-decoration: underline;
 }
 
 .hp-popup a:hover {
-    opacity: 0.85;
+    color: #000000;
 }
 
 
@@ -76,14 +57,14 @@
 /* ============================= */
 
 .hp-sep {
-    margin: 0.8em 0;
+    margin: 1em 0;
     border: none;
-    border-top: 1px solid rgba(255,255,255,0.25);
+    border-top: 1px solid #d6d6d4;
 }
 
 
 /* ============================= */
-/* Accordion fix (VIDI)          */
+/* VIDI accordion fix            */
 /* ============================= */
 
 .accordion .collapse {
@@ -101,4 +82,3 @@
 .accordion-item {
     border: none;
 }
-``
