@@ -65,8 +65,8 @@
 }
 
 .hp-phone {
-    font-size: 1.3em;
-    font-weight: 700;
+    font-size: 1.15em;
+    font-weight: 600;
 }
 
 .hp-popup p {
@@ -79,8 +79,4 @@
     font-weight: 600;
     margin-bottom: 0.4em;
 }
-
-/* ============================= */
-/* Fjern stiplet kant ved valg */
-/* ============================= */
 
