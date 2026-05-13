@@ -1,18 +1,19 @@
 /* =========================================================
-   MASTER CSS – Hjemmepleje popup (VIDI)
+   MASTER CSS – Hjemmepleje popup (VIDI) – embed-robust
+   - Popup bredde 380px + max-width i % (iframe-venlig)
    - Lys “kommunal” kort-stil
-   - SVG-ikoner i “Nyborg-lignende” stil
-   - Klikbare links + pæn linjebrydning
-   - Popup bredde 380px + responsiv
+   - SVG-ikoner i Nyborg-lignende stil
+   - Klikbare links + større touch targets
    - crossMultiSelect accordion altid åben
    ========================================================= */
 
 /* -----------------------------
    1) Popup bredde (Leaflet)
+   - 380px fast, men aldrig bredere end container/iframe
    ----------------------------- */
 .leaflet-popup-content {
   width: 380px !important;
-  max-width: calc(100vw - 80px) !important;
+  max-width: calc(100% - 40px) !important;  /* embed/iframe-robust */
   margin: 0 !important;
 }
 
@@ -20,11 +21,11 @@
   padding: 0 !important; /* vi bruger padding i .hp-popup */
 }
 
-/* Mobil: brug næsten fuld bredde */
+/* Mobil: næsten fuld bredde */
 @media (max-width: 480px) {
   .leaflet-popup-content {
-    width: calc(100vw - 40px) !important;
-    max-width: calc(100vw - 40px) !important;
+    width: calc(100% - 24px) !important;
+    max-width: calc(100% - 24px) !important;
   }
 }
 
@@ -38,7 +39,7 @@
   font-family: "Segoe UI", Arial, sans-serif;
   font-size: 0.92rem;
 
-  background: #f3f2ef !important; /* lys varm grå */
+  background: #f3f2ef !important;
   color: #333333 !important;
 
   border-radius: 14px;
@@ -104,7 +105,7 @@
 
   background: #e7e5e2;
   border-radius: 8px;
-  flex: 0 0 30px; /* holder kolonnen stabil */
+  flex: 0 0 30px; /* stabil ikon-kolonne */
 }
 
 .hp-icon svg {
@@ -120,16 +121,27 @@
 
 /* -----------------------------
    5) Links (klikbare + pæn wrap)
+   + større klikflader (touch)
    ----------------------------- */
 .hp-popup a {
   color: #333333 !important;
   text-decoration: underline;
   overflow-wrap: anywhere;
   word-break: break-word;
+
+  /* større “touch target” uden at ændre layout markant */
+  display: inline-block;
+  padding: 4px 0;
 }
 
 .hp-popup a:hover {
   color: #000000 !important;
+}
+
+/* Hvis telefon/mail står meget tæt, giver lidt ro */
+.hp-popup a:focus {
+  outline: 2px solid rgba(0,0,0,0.15);
+  outline-offset: 2px;
 }
 
 /* -----------------------------
