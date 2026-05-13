@@ -1,5 +1,77 @@
 /* ============================= */
-/* Accordion fix (VIDI)          */
+/* Popup container               */
+/* ============================= */
+
+.hp-popup {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 0.95rem;
+    background: #ffffff;
+    border-radius: 6px;
+    padding: 10px 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+
+/* ============================= */
+/* Tekst                         */
+/* ============================= */
+
+.hp-popup p {
+    margin-bottom: 0.6em;
+    line-height: 1.35;
+}
+
+.hp-highlight {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 0.4em;
+}
+
+
+/* ============================= */
+/* Ikoner                        */
+/* ============================= */
+
+.hp-icon {
+    font-size: 1.1em;
+    display: inline-block;
+    margin-bottom: 2px;
+}
+
+
+/* ============================= */
+/* Telefon                       */
+/* ============================= */
+
+.hp-phone {
+    font-weight: 600;
+    font-size: 1.05em;
+}
+
+
+/* ============================= */
+/* Links                         */
+/* ============================= */
+
+.hp-popup a {
+    color: #005a8c;
+    text-decoration: underline;
+}
+
+
+/* ============================= */
+/* Divider                       */
+/* ============================= */
+
+.hp-sep {
+    margin: 0.8em 0;
+    border: none;
+    border-top: 1px solid #e5e5e5;
+}
+
+
+/* ============================= */
+/* VIDI accordion fix            */
 /* ============================= */
 
 .accordion .collapse {
@@ -16,65 +88,4 @@
 
 .accordion-item {
     border: none;
-}
-
-
-/* ============================= */
-/* Popup layout                  */
-/* ============================= */
-
-.hp-popup {
-    font-size: 0.95rem;
-}
-
-.hp-popup p {
-    margin-bottom: 0.5em;
-    line-height: 1.35;
-}
-
-
-/* ============================= */
-/* Teksthierarki                 */
-/* ============================= */
-
-.hp-highlight {
-    font-size: 1.1em;
-    font-weight: 600;
-    margin-bottom: 0.3em;
-}
-
-.hp-muted {
-    color: #555;
-}
-
-
-/* ============================= */
-/* Telefon (balanceret)          */
-/* ============================= */
-
-.hp-phone {
-    font-size: 1.05em;
-    font-weight: 600;
-}
-
-
-/* ============================= */
-/* Divider                       */
-/* ============================= */
-
-.hp-sep {
-    margin: 0.8em 0;
-    border: none;
-    border-top: 1px solid #ddd;
-}
-
-
-/* ============================= */
-/* Fjern markering i kort        */
-/* ============================= */
-
-.leaflet-interactive.selected,
-.leaflet-interactive.leaflet-selected {
-    stroke-dasharray: none !important;
-    stroke-width: 0 !important;
 }
