@@ -22,6 +22,11 @@
     display:none;
 }
 
+/* Skjul accordion header */
+.accordion-summary {
+  display: none;
+}
+
 /* ============================= */
 /* Fjern stiplet kant ved valg af feature i Vidi */
 /* ============================= */
