@@ -4,11 +4,11 @@
 
 .hp-popup {
     font-family: "Segoe UI", Arial, sans-serif;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     background: #ffffff;
     border-radius: 6px;
     padding: 10px 12px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
 }
 
 
@@ -17,59 +17,35 @@
 /* ============================= */
 
 .hp-popup p {
-    margin-bottom: 0.6em;
+    margin-bottom: 0.5em;
     line-height: 1.35;
 }
 
+/* Overskrift – mindre og roligere */
 .hp-highlight {
-    font-size: 1.1em;
+    font-size: 1.05em;
     font-weight: 600;
-    margin-bottom: 0.4em;
+    margin-bottom: 0.3em;
 }
 
+/* Introtekst før kontakt */
+.hp-intro {
+    margin-bottom: 0.25em;
+    font-size: 0.95em;
+}
 
-/* ============================= */
-/* Linjer med ikon + tekst       */
-/* ============================= */
-
+/* Linje med ikon + tekst */
 .hp-line {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 6px;
     margin-bottom: 0.2em;
 }
 
-/* ikon */
+/* Ikon */
 .hp-icon {
-    flex: 0 0 18px;
-    font-size: 1em;
-    line-height: 1.2;
-}
-
-/* tekst ved siden af ikon */
-.hp-line a,
-.hp-line span {
-    line-height: 1.3;
-}
-
-
-/* ============================= */
-/* Telefon                       */
-/* ============================= */
-
-.hp-phone {
-    font-weight: 600;
-}
-
-
-/* ============================= */
-/* Divider                       */
-/* ============================= */
-
-.hp-sep {
-    margin: 0.8em 0;
-    border: none;
-    border-top: 1px solid #e5e5e5;
+    flex: 0 0 16px;
+    font-size: 0.95em;
 }
 
 
@@ -80,6 +56,17 @@
 .hp-popup a {
     color: #005a8c;
     text-decoration: underline;
+}
+
+
+/* ============================= */
+/* Divider                       */
+/* ============================= */
+
+.hp-sep {
+    margin: 0.7em 0;
+    border: none;
+    border-top: 1px solid #e6e6e6;
 }
 
 
