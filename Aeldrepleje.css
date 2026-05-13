@@ -1,24 +1,25 @@
 /* =========================================================
-   MASTER CSS – Hjemmepleje popup (VIDI) – embed-robust
+   MASTER CSS – Hjemmepleje popup (VIDI) – embed-robust v2
    - Popup bredde 380px + max-width i % (iframe-venlig)
    - Lys “kommunal” kort-stil
-   - SVG-ikoner i Nyborg-lignende stil
+   - SVG-ikoner skalerer med tekst (em-baseret)
    - Klikbare links + større touch targets
    - crossMultiSelect accordion altid åben
    ========================================================= */
 
+
 /* -----------------------------
    1) Popup bredde (Leaflet)
-   - 380px fast, men aldrig bredere end container/iframe
+   - 380px fast, men aldrig bredere end iframe/container
    ----------------------------- */
 .leaflet-popup-content {
   width: 380px !important;
-  max-width: calc(100% - 40px) !important;  /* embed/iframe-robust */
+  max-width: calc(100% - 40px) !important;
   margin: 0 !important;
 }
 
 .leaflet-popup-content-wrapper {
-  padding: 0 !important; /* vi bruger padding i .hp-popup */
+  padding: 0 !important; /* padding håndteres i .hp-popup */
 }
 
 /* Mobil: næsten fuld bredde */
@@ -28,6 +29,7 @@
     max-width: calc(100% - 24px) !important;
   }
 }
+
 
 /* -----------------------------
    2) Popup “kort”-container
@@ -47,32 +49,29 @@
   box-shadow: 0 2px 5px rgba(0,0,0,0.08);
 }
 
-/* Tekstflow */
 .hp-popup p {
   margin: 0 0 0.6em 0;
   line-height: 1.45;
 }
 
-/* Overskriftlinjer */
 .hp-highlight {
   font-size: 1.05em;
   font-weight: 600;
   margin-bottom: 0.35em;
 }
 
-/* “Du kan kontakte os på:” */
 .hp-intro {
   font-size: 0.95em;
   font-weight: 600;
   margin: 0 0 0.35em 0;
 }
 
-/* Divider */
 .hp-sep {
   margin: 1.05em 0;
   border: none;
   border-top: 1px solid #d8d8d6 !important;
 }
+
 
 /* -----------------------------
    3) Linjer: ikon + link + tid
@@ -92,32 +91,45 @@
   white-space: nowrap;
 }
 
+
 /* -----------------------------
-   4) Ikoner (Nyborg-lignende)
+   4) Ikoner – em-baseret (embed-sikker)
+   - Skalerer med tekststørrelse
    ----------------------------- */
 .hp-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  width: 30px;
-  height: 30px;
+  width: 2.0em;              /* følger font-size */
+  height: 2.0em;
+  border-radius: 0.55em;
 
   background: #e7e5e2;
-  border-radius: 8px;
-  flex: 0 0 30px; /* stabil ikon-kolonne */
+  flex: 0 0 2.0em;           /* stabil ikon-kolonne */
 }
 
+/* SVG følger typografien */
 .hp-icon svg {
-  width: 16px;
-  height: 16px;
+  width: 1.05em;
+  height: 1.05em;
 
   stroke: #6a6a6a;
   stroke-width: 1.6;
   fill: none;
+
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+/* Hvis du ønsker “låst” stregtykkelse ved skalering,
+   kan du aktivere dette (valgfrit):
+.hp-icon svg path,
+.hp-icon svg rect {
+  vector-effect: non-scaling-stroke;
+}
+*/
+
 
 /* -----------------------------
    5) Links (klikbare + pæn wrap)
@@ -126,10 +138,10 @@
 .hp-popup a {
   color: #333333 !important;
   text-decoration: underline;
+
   overflow-wrap: anywhere;
   word-break: break-word;
 
-  /* større “touch target” uden at ændre layout markant */
   display: inline-block;
   padding: 4px 0;
 }
@@ -138,11 +150,11 @@
   color: #000000 !important;
 }
 
-/* Hvis telefon/mail står meget tæt, giver lidt ro */
 .hp-popup a:focus {
   outline: 2px solid rgba(0,0,0,0.15);
   outline-offset: 2px;
 }
+
 
 /* -----------------------------
    6) crossMultiSelect / accordion
@@ -161,6 +173,7 @@
   border: none !important;
 }
 
+
 /* -----------------------------
    7) (Valgfrit) Fjern stiplet
    kant ved valgt feature
@@ -170,3 +183,4 @@
   stroke-dasharray: none !important;
   stroke-width: 0 !important;
 }
+``
