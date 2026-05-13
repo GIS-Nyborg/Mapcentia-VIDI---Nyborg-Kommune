@@ -1,18 +1,18 @@
 /* ============================= */
-/* Popup container (lys stil)    */
+/* Popup (kort stil)             */
 /* ============================= */
 
 .hp-popup {
     font-family: "Segoe UI", Arial, sans-serif;
     font-size: 0.95rem;
 
-    background: #f3f2ef !important;   /* lys varm grå */
+    background: #f3f2ef !important;
     color: #333333 !important;
 
     border-radius: 14px;
     padding: 18px 20px;
 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
 }
 
 
@@ -21,18 +21,16 @@
 /* ============================= */
 
 .hp-popup p {
-    margin-bottom: 0.7em;
+    margin-bottom: 0.6em;
     line-height: 1.5;
 }
 
-/* Overskrift */
 .hp-highlight {
     font-size: 1.1em;
     font-weight: 600;
     margin-bottom: 0.4em;
 }
 
-/* Introtekst */
 .hp-intro {
     font-size: 0.95em;
     font-weight: 600;
@@ -42,21 +40,43 @@
 
 
 /* ============================= */
-/* Linjer (telefon/mail)         */
+/* Linjer med ikon               */
 /* ============================= */
 
 .hp-line {
     display: flex;
     align-items: center;
-    gap: 6px;
-    margin-bottom: 0.3em;
+    gap: 10px;
+    margin-bottom: 0.35em;
 }
 
-/* Hvis du stadig bruger ikon */
+
+/* ============================= */
+/* Ikoner (Nyborg stil)          */
+/* ============================= */
+
 .hp-icon {
-    flex: 0 0 16px;
-    font-size: 0.95em;
-    opacity: 0.8;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    background: #e7e5e2;
+    border-radius: 8px;
+}
+
+.hp-icon svg {
+    width: 16px;
+    height: 16px;
+
+    stroke: #6a6a6a;
+    stroke-width: 1.6;
+
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 
@@ -80,3 +100,27 @@
 
 .hp-sep {
     margin: 1.1em 0;
+    border: none;
+    border-top: 1px solid #d8d8d6 !important;
+}
+
+
+/* ============================= */
+/* VIDI accordion fix            */
+/* ============================= */
+
+.accordion .collapse {
+    display: block !important;
+}
+
+.accordion-button {
+    display: none !important;
+}
+
+.accordion-button::after {
+    display: none !important;
+}
+
+.accordion-item {
+    border: none !important;
+}
