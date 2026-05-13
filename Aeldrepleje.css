@@ -33,6 +33,10 @@
   margin-bottom: 0.6em;
 }
 
+.hp-popup a[href^="tel"] {
+  font-weight: 600;
+}
+
 /* ============================= */
 /* Fjern stiplet kant ved valg af feature i Vidi */
 /* ============================= */
