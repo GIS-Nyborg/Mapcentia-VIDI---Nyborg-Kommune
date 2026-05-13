@@ -1,18 +1,18 @@
 /* ============================= */
-/* Popup container (lys kort)    */
+/* Popup container (lys stil)    */
 /* ============================= */
 
 .hp-popup {
     font-family: "Segoe UI", Arial, sans-serif;
     font-size: 0.95rem;
 
-    background: #f3f2ef;       /* lys varm grå */
-    color: #333333;
+    background: #f3f2ef !important;   /* lys varm grå */
+    color: #333333 !important;
 
     border-radius: 14px;
     padding: 18px 20px;
 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 
 
@@ -25,43 +25,19 @@
     line-height: 1.5;
 }
 
-/* “Dit hjemmeplejedistrikt…” */
+/* Overskrift */
 .hp-highlight {
     font-size: 1.1em;
     font-weight: 600;
     margin-bottom: 0.4em;
 }
 
-/* “Du kan kontakte os på:” */
+/* Introtekst */
 .hp-intro {
+    font-size: 0.95em;
     font-weight: 600;
-    margin-top: 0.6em;
-    margin-bottom: 0.4em;
-}
-
-
-/* ============================= */
-/* Links (som i kommunesider)    */
-/* ============================= */
-
-.hp-popup a {
-    color: #333333;
-    text-decoration: underline;
-}
-
-.hp-popup a:hover {
-    color: #000000;
-}
-
-
-/* ============================= */
-/* Divider                       */
-/* ============================= */
-
-.hp-sep {
-    margin: 1.2em 0;
-    border: none;
-    border-top: 1px solid #d8d8d6;
+    margin-top: 0.5em;
+    margin-bottom: 0.3em;
 }
 
 
@@ -70,26 +46,37 @@
 /* ============================= */
 
 .hp-line {
-    margin-bottom: 0.25em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 0.3em;
+}
+
+/* Hvis du stadig bruger ikon */
+.hp-icon {
+    flex: 0 0 16px;
+    font-size: 0.95em;
+    opacity: 0.8;
 }
 
 
 /* ============================= */
-/* VIDI accordion fix            */
+/* Links                         */
 /* ============================= */
 
-.accordion .collapse {
-    display: block !important;
+.hp-popup a {
+    color: #333333 !important;
+    text-decoration: underline;
 }
 
-.accordion-button {
-    display: none;
+.hp-popup a:hover {
+    color: #000000 !important;
 }
 
-.accordion-button::after {
-    display: none;
-}
 
-.accordion-item {
-    border: none;
-}
+/* ============================= */
+/* Divider                       */
+/* ============================= */
+
+.hp-sep {
+    margin: 1.1em 0;
