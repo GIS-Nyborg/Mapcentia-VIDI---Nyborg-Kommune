@@ -1,47 +1,70 @@
-#vector-side-table
-{
+#vector-side-table {
     white-space: nowrap;
     font-size: .7rem;
 }
 
-.bootstrap-table .fixed-table-container .table thead th .sortable
-{
+.bootstrap-table .fixed-table-container .table thead th .sortable {
     padding-right: 10px!important;
 }
 
 /* Følgende skjuler editorværktøjerne i tabellen */
 #vector-side-table > div.bootstrap-table.bootstrap5 > div.fixed-table-container.fixed-height > div.fixed-table-header > table > thead > tr > th:last-child {
-    display:none;
+    display: none;
 }
 
 #vector-side-table > div.bootstrap-table.bootstrap5 > div.fixed-table-container.fixed-height > div.fixed-table-body > table > thead > tr > th:last-child {
-    display:none;
+    display: none;
 }
 
 #vector-side-table > div.bootstrap-table.bootstrap5 > div.fixed-table-container.fixed-height > div.fixed-table-body > table > tbody > tr > td:last-child {
-    display:none;
+    display: none;
 }
 
-/* Skjul accordion header */
-.accordion-summary {
-  display: none;
+/* ============================= */
+/* Popup (accordion tilpasning)  */
+/* ============================= */
+
+/* Sørg for ALT indhold altid vises */
+.accordion .collapse {
+    display: block !important;
 }
+
+/* Skjul den blå accordion header */
+.accordion-button {
+    display: none;
+}
+
+/* Fjern pilikon */
+.accordion-button::after {
+    display: none;
+}
+
+/* Fjern ekstra spacing fra accordion */
+.accordion-item {
+    border: none;
+}
+
+/* ============================= */
+/* Tekstforbedringer */
+/* ============================= */
 
 .hp-highlight {
-  font-size: 1.1em;
-  font-weight: 600;
-  margin-bottom: 0.6em;
+    font-size: 1.15em;
+    font-weight: 600;
+    margin-bottom: 0.6em;
 }
 
+/* Telefonnummer lidt tydeligere */
 .hp-popup a[href^="tel"] {
-  font-weight: 600;
+    font-weight: 600;
+}
+
+/* Lidt mere luft i tekst */
+.hp-popup p {
+    margin-bottom: 0.6em;
 }
 
 /* ============================= */
-/* Fjern stiplet kant ved valg af feature i Vidi */
+/* Fjern stiplet kant ved valg */
 /* ============================= */
-.leaflet-interactive.selected,
-.leaflet-interactive.leaflet-selected {
-    stroke-dasharray: none !important;
-    stroke-width: 0 !important;
-}
+
