@@ -1,18 +1,18 @@
 /* ============================= */
-/* Popup container (kort)        */
+/* Popup container (lys kort)    */
 /* ============================= */
 
 .hp-popup {
     font-family: "Segoe UI", Arial, sans-serif;
     font-size: 0.95rem;
 
-    background: #f0f0ee;   /* lys kommunal grå */
-    color: #2b2b2b;
+    background: #f3f2ef;       /* lys varm grå */
+    color: #333333;
 
-    border-radius: 12px;
-    padding: 14px 16px;
+    border-radius: 14px;
+    padding: 18px 20px;
 
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
 }
 
 
@@ -21,29 +21,31 @@
 /* ============================= */
 
 .hp-popup p {
-    margin-bottom: 0.6em;
+    margin-bottom: 0.7em;
     line-height: 1.5;
 }
 
+/* “Dit hjemmeplejedistrikt…” */
 .hp-highlight {
-    font-size: 1.15em;
+    font-size: 1.1em;
     font-weight: 600;
     margin-bottom: 0.4em;
 }
 
+/* “Du kan kontakte os på:” */
 .hp-intro {
-    font-weight: 500;
-    margin-top: 0.4em;
-    margin-bottom: 0.3em;
+    font-weight: 600;
+    margin-top: 0.6em;
+    margin-bottom: 0.4em;
 }
 
 
 /* ============================= */
-/* Links                         */
+/* Links (som i kommunesider)    */
 /* ============================= */
 
 .hp-popup a {
-    color: #2b2b2b;
+    color: #333333;
     text-decoration: underline;
 }
 
@@ -57,9 +59,18 @@
 /* ============================= */
 
 .hp-sep {
-    margin: 1em 0;
+    margin: 1.2em 0;
     border: none;
-    border-top: 1px solid #d6d6d4;
+    border-top: 1px solid #d8d8d6;
+}
+
+
+/* ============================= */
+/* Linjer (telefon/mail)         */
+/* ============================= */
+
+.hp-line {
+    margin-bottom: 0.25em;
 }
 
 
