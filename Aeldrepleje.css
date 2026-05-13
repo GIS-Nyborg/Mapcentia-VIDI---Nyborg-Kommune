@@ -1,126 +1,160 @@
-/* ============================= */
-/* Popup (kort stil)             */
-/* ============================= */
+/* =========================================================
+   MASTER CSS – Hjemmepleje popup (VIDI)
+   - Lys “kommunal” kort-stil
+   - SVG-ikoner i “Nyborg-lignende” stil
+   - Klikbare links + pæn linjebrydning
+   - Popup bredde 380px + responsiv
+   - crossMultiSelect accordion altid åben
+   ========================================================= */
 
+/* -----------------------------
+   1) Popup bredde (Leaflet)
+   ----------------------------- */
+.leaflet-popup-content {
+  width: 380px !important;
+  max-width: calc(100vw - 80px) !important;
+  margin: 0 !important;
+}
+
+.leaflet-popup-content-wrapper {
+  padding: 0 !important; /* vi bruger padding i .hp-popup */
+}
+
+/* Mobil: brug næsten fuld bredde */
+@media (max-width: 480px) {
+  .leaflet-popup-content {
+    width: calc(100vw - 40px) !important;
+    max-width: calc(100vw - 40px) !important;
+  }
+}
+
+/* -----------------------------
+   2) Popup “kort”-container
+   ----------------------------- */
 .hp-popup {
-    font-family: "Segoe UI", Arial, sans-serif;
-    font-size: 0.95rem;
+  width: 100%;
+  box-sizing: border-box;
 
-    background: #f3f2ef !important;
-    color: #333333 !important;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 0.92rem;
 
-    border-radius: 14px;
-    padding: 18px 20px;
+  background: #f3f2ef !important; /* lys varm grå */
+  color: #333333 !important;
 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
 }
 
-
-/* ============================= */
-/* Tekst                         */
-/* ============================= */
-
+/* Tekstflow */
 .hp-popup p {
-    margin-bottom: 0.6em;
-    line-height: 1.5;
+  margin: 0 0 0.6em 0;
+  line-height: 1.45;
 }
 
+/* Overskriftlinjer */
 .hp-highlight {
-    font-size: 1.1em;
-    font-weight: 600;
-    margin-bottom: 0.4em;
+  font-size: 1.05em;
+  font-weight: 600;
+  margin-bottom: 0.35em;
 }
 
+/* “Du kan kontakte os på:” */
 .hp-intro {
-    font-size: 0.95em;
-    font-weight: 600;
-    margin-top: 0.5em;
-    margin-bottom: 0.3em;
+  font-size: 0.95em;
+  font-weight: 600;
+  margin: 0 0 0.35em 0;
 }
 
+/* Divider */
+.hp-sep {
+  margin: 1.05em 0;
+  border: none;
+  border-top: 1px solid #d8d8d6 !important;
+}
 
-/* ============================= */
-/* Linjer med ikon               */
-/* ============================= */
-
+/* -----------------------------
+   3) Linjer: ikon + link + tid
+   ----------------------------- */
 .hp-line {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 0.35em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.35em;
 }
 
+/* Tid (kl. 11-12 / efter kl. 15) */
+.hp-time {
+  margin-left: 6px;
+  color: #666666;
+  font-size: 0.95em;
+  white-space: nowrap;
+}
 
-/* ============================= */
-/* Ikoner (Nyborg stil)          */
-/* ============================= */
-
+/* -----------------------------
+   4) Ikoner (Nyborg-lignende)
+   ----------------------------- */
 .hp-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 
-    background: #e7e5e2;
-    border-radius: 8px;
+  background: #e7e5e2;
+  border-radius: 8px;
+  flex: 0 0 30px; /* holder kolonnen stabil */
 }
 
 .hp-icon svg {
-    width: 16px;
-    height: 16px;
+  width: 16px;
+  height: 16px;
 
-    stroke: #6a6a6a;
-    stroke-width: 1.6;
-
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+  stroke: #6a6a6a;
+  stroke-width: 1.6;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-
-/* ============================= */
-/* Links                         */
-/* ============================= */
-
+/* -----------------------------
+   5) Links (klikbare + pæn wrap)
+   ----------------------------- */
 .hp-popup a {
-    color: #333333 !important;
-    text-decoration: underline;
+  color: #333333 !important;
+  text-decoration: underline;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .hp-popup a:hover {
-    color: #000000 !important;
+  color: #000000 !important;
 }
 
-
-/* ============================= */
-/* Divider                       */
-/* ============================= */
-
-.hp-sep {
-    margin: 1.1em 0;
-    border: none;
-    border-top: 1px solid #d8d8d6 !important;
-}
-
-
-/* ============================= */
-/* VIDI accordion fix            */
-/* ============================= */
-
+/* -----------------------------
+   6) crossMultiSelect / accordion
+   - altid åben + skjul header
+   ----------------------------- */
 .accordion .collapse {
-    display: block !important;
+  display: block !important;
 }
 
-.accordion-button {
-    display: none !important;
-}
-
+.accordion-button,
 .accordion-button::after {
-    display: none !important;
+  display: none !important;
 }
 
 .accordion-item {
-    border: none !important;
+  border: none !important;
+}
+
+/* -----------------------------
+   7) (Valgfrit) Fjern stiplet
+   kant ved valgt feature
+   ----------------------------- */
+.leaflet-interactive.selected,
+.leaflet-interactive.leaflet-selected {
+  stroke-dasharray: none !important;
+  stroke-width: 0 !important;
 }
