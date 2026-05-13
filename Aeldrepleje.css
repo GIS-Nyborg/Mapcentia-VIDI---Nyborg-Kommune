@@ -27,6 +27,12 @@
   display: none;
 }
 
+.hp-highlight {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: 0.6em;
+}
+
 /* ============================= */
 /* Fjern stiplet kant ved valg af feature i Vidi */
 /* ============================= */
