@@ -1,28 +1,15 @@
 /* =========================================================
-   MASTER CSS – Hjemmepleje popup (VIDI) – embed-robust v2
-   - Popup bredde 380px + max-width i % (iframe-venlig)
-   - Lys “kommunal” kort-stil
-   - SVG-ikoner skalerer med tekst (em-baseret)
-   - Klikbare links + større touch targets
-   - crossMultiSelect accordion altid åben
+   MASTER CSS – Popup (VIDI) – robust ikonskalering i embed
    ========================================================= */
 
-
-/* -----------------------------
-   1) Popup bredde (Leaflet)
-   - 380px fast, men aldrig bredere end iframe/container
-   ----------------------------- */
+/* Leaflet popup bredde */
 .leaflet-popup-content {
   width: 380px !important;
   max-width: calc(100% - 40px) !important;
   margin: 0 !important;
 }
+.leaflet-popup-content-wrapper { padding: 0 !important; }
 
-.leaflet-popup-content-wrapper {
-  padding: 0 !important; /* padding håndteres i .hp-popup */
-}
-
-/* Mobil: næsten fuld bredde */
 @media (max-width: 480px) {
   .leaflet-popup-content {
     width: calc(100% - 24px) !important;
@@ -30,157 +17,92 @@
   }
 }
 
+/* Popup kort-stil */
+.hp-popup{
+  width:100%;
+  box-sizing:border-box;
+  font-family:"Segoe UI", Arial, sans-serif;
+  font-size:0.92rem;
 
-/* -----------------------------
-   2) Popup “kort”-container
-   ----------------------------- */
-.hp-popup {
-  width: 100%;
-  box-sizing: border-box;
+  background:#f3f2ef !important;
+  color:#333 !important;
 
-  font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 0.92rem;
-
-  background: #f3f2ef !important;
-  color: #333333 !important;
-
-  border-radius: 14px;
-  padding: 18px 20px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  border-radius:14px;
+  padding:18px 20px;
+  box-shadow:0 2px 5px rgba(0,0,0,0.08);
 }
 
-.hp-popup p {
-  margin: 0 0 0.6em 0;
-  line-height: 1.45;
+.hp-popup p{ margin:0 0 0.6em 0; line-height:1.45; }
+.hp-highlight{ font-size:1.05em; font-weight:600; margin-bottom:0.35em; }
+.hp-intro{ font-size:0.95em; font-weight:600; margin:0 0 0.35em 0; }
+.hp-sep{ margin:1.05em 0; border:none; border-top:1px solid #d8d8d6 !important; }
+
+.hp-line{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:0.35em;
 }
 
-.hp-highlight {
-  font-size: 1.05em;
-  font-weight: 600;
-  margin-bottom: 0.35em;
+.hp-time{
+  margin-left:6px;
+  color:#666;
+  font-size:0.95em;
+  white-space:nowrap;
 }
 
-.hp-intro {
-  font-size: 0.95em;
-  font-weight: 600;
-  margin: 0 0 0.35em 0;
+/* === IKONER: lås størrelse/stil, så embed ikke kan overstyre === */
+.hp-icon{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+
+  width:30px !important;
+  height:30px !important;
+
+  background:#e7e5e2 !important;
+  border-radius:8px !important;
+  flex:0 0 30px !important;
 }
 
-.hp-sep {
-  margin: 1.05em 0;
-  border: none;
-  border-top: 1px solid #d8d8d6 !important;
+/* både .hp-svg og alle svg inde i hp-icon */
+.hp-icon svg,
+.hp-svg{
+  width:16px !important;
+  height:16px !important;
+  max-width:16px !important;
+  max-height:16px !important;
+  display:block !important;
+
+  fill:none !important;
+  stroke:#6a6a6a !important;
+  stroke-width:1.6 !important;
+  stroke-linecap:round !important;
+  stroke-linejoin:round !important;
 }
 
-
-/* -----------------------------
-   3) Linjer: ikon + link + tid
-   ----------------------------- */
-.hp-line {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 0.35em;
+/* Links */
+.hp-popup a{
+  color:#333 !important;
+  text-decoration:underline;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+  display:inline-block;
+  padding:4px 0;
 }
+.hp-popup a:hover{ color:#000 !important; }
+.hp-popup a:focus{ outline:2px solid rgba(0,0,0,0.15); outline-offset:2px; }
 
-/* Tid (kl. 11-12 / efter kl. 15) */
-.hp-time {
-  margin-left: 6px;
-  color: #666666;
-  font-size: 0.95em;
-  white-space: nowrap;
-}
-
-
-/* -----------------------------
-   4) Ikoner – em-baseret (embed-sikker)
-   - Skalerer med tekststørrelse
-   ----------------------------- */
-.hp-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 2.0em;              /* følger font-size */
-  height: 2.0em;
-  border-radius: 0.55em;
-
-  background: #e7e5e2;
-  flex: 0 0 2.0em;           /* stabil ikon-kolonne */
-}
-
-/* SVG følger typografien */
-.hp-icon svg {
-  width: 1.05em;
-  height: 1.05em;
-
-  stroke: #6a6a6a;
-  stroke-width: 1.6;
-  fill: none;
-
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-/* Hvis du ønsker “låst” stregtykkelse ved skalering,
-   kan du aktivere dette (valgfrit):
-.hp-icon svg path,
-.hp-icon svg rect {
-  vector-effect: non-scaling-stroke;
-}
-*/
-
-
-/* -----------------------------
-   5) Links (klikbare + pæn wrap)
-   + større klikflader (touch)
-   ----------------------------- */
-.hp-popup a {
-  color: #333333 !important;
-  text-decoration: underline;
-
-  overflow-wrap: anywhere;
-  word-break: break-word;
-
-  display: inline-block;
-  padding: 4px 0;
-}
-
-.hp-popup a:hover {
-  color: #000000 !important;
-}
-
-.hp-popup a:focus {
-  outline: 2px solid rgba(0,0,0,0.15);
-  outline-offset: 2px;
-}
-
-
-/* -----------------------------
-   6) crossMultiSelect / accordion
-   - altid åben + skjul header
-   ----------------------------- */
-.accordion .collapse {
-  display: block !important;
-}
-
+/* crossMultiSelect accordion */
+.accordion .collapse{ display:block !important; }
 .accordion-button,
-.accordion-button::after {
-  display: none !important;
-}
+.accordion-button::after{ display:none !important; }
+.accordion-item{ border:none !important; }
 
-.accordion-item {
-  border: none !important;
-}
-
-
-/* -----------------------------
-   7) (Valgfrit) Fjern stiplet
-   kant ved valgt feature
-   ----------------------------- */
+/* (valgfrit) fjern stiplet markering */
 .leaflet-interactive.selected,
-.leaflet-interactive.leaflet-selected {
-  stroke-dasharray: none !important;
-  stroke-width: 0 !important;
+.leaflet-interactive.leaflet-selected{
+  stroke-dasharray:none !important;
+  stroke-width:0 !important;
 }
 ``
